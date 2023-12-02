@@ -6,3 +6,4 @@ I'm using the template provided by Apple that can be found [here](https://github
 
 Solutions:
 - [Day 01](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/Day01.swift)
+- [Day 02](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/Day02.swift)
