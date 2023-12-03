@@ -6,12 +6,12 @@ struct Day01: AdventDay {
     func part1() -> Any {
         var numbers: [Int] = []
         
-        for line in data.components(separatedBy: "\n") {
+        for line in data.components(separatedBy: .newlines) {
             guard !line.isEmpty else { continue }
             
-            guard let firstNumber = line.first(where: \.isWholeNumber),
-                  let lastNumber = line.reversed().first(where: \.isWholeNumber),
-                  let number = Int("\(firstNumber)\(lastNumber)")
+            guard let firstNumber = line.first(where: \.isNumber),
+                  let lastNumber = line.reversed().first(where: \.isNumber),
+                  let number = try? 10 * firstNumber.int + lastNumber.int
             else { fatalError() }
             
             numbers.append(number)
@@ -26,13 +26,12 @@ struct Day01: AdventDay {
         
         var numbers: [Int] = []
         
-        for line in data.components(separatedBy: "\n") {
+        for line in data.components(separatedBy: .newlines) {
             guard !line.isEmpty else { continue }
             
             let firstNumber = self.firstNumber(in: line, spelledOutNumbers: spelledOutNumbers)
             let lastNumber = self.firstNumber(in: String(line.reversed()), spelledOutNumbers: reversedSpelledOutNumbers)
-            
-            guard let number = Int("\(firstNumber)\(lastNumber)") else { fatalError() }
+            let number = 10 * firstNumber + lastNumber
             
             numbers.append(number)
         }
@@ -44,7 +43,7 @@ struct Day01: AdventDay {
         var number = 0
         
         for (index, char) in line.enumerated() {
-            if let value = Int("\(char)") {
+            if let value = try? char.int {
                 number = value
                 break
             }

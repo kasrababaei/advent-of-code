@@ -5,14 +5,14 @@ struct Day02: AdventDay {
     
     func part1() -> Any {
         data
-            .components(separatedBy: "\n")
+            .components(separatedBy: .newlines)
             .compactMap { Game(line: $0, shouldApplyLimit: true)?.id }
             .reduce(into: 0) { $0 += $1 }
     }
     
     func part2() -> Any {
         data
-            .components(separatedBy: "\n")
+            .components(separatedBy: .newlines)
             .filter { !$0.isEmpty }
             .compactMap { Game(line: $0, shouldApplyLimit: false)?.power }
             .reduce(into: 0) { $0 += $1 }
@@ -21,13 +21,7 @@ struct Day02: AdventDay {
 
 struct Game {
     let id: Int
-    let maxBlue: Int
-    let maxRed: Int
-    let maxGreen: Int
-    
-    var power: Int {
-        maxBlue * maxRed * maxGreen
-    }
+    let power: Int
     
     init?(line: String, shouldApplyLimit: Bool) {
         guard !line.isEmpty else { return nil }
@@ -44,71 +38,45 @@ struct Game {
         var maxRed = 0
         var maxGreen = 0
         
-        for bag in subsets.components(separatedBy: .init([";"])) {
+        let numberOfCubes: (String) -> Int = { cube in
+            try! cube
+                .trimmingCharacters(in: .whitespaces)
+                .prefix(while: \.isNumber)
+                .int
+        }
+        
+        for bag in subsets.components(separatedBy: ";") {
             for cube in bag.components(separatedBy: ",") {
                 if cube.hasSuffix("blue") {
-                    let value = cube
-                        .trimmingCharacters(in: .whitespaces)
-                        .prefix(while: \.isWholeNumber)
-                    
-                    guard let value = Int(value) else {
-                        return nil
-                    }
+                    let value = numberOfCubes(cube)
                     
                     if shouldApplyLimit, value > 14 {
                         return nil
                     }
                     
-                    if value > maxBlue {
-                        maxBlue = value
-                    }
+                    maxBlue = max(maxBlue, value)
                 } else if cube.hasSuffix("red") {
-                    let value = cube
-                        .trimmingCharacters(in: .whitespaces)
-                        .prefix(while: \.isWholeNumber)
-                    
-                    guard let value = Int(value) else {
-                        return nil
-                    }
+                    let value = numberOfCubes(cube)
                     
                     if shouldApplyLimit, value > 12 {
                         return nil
                     }
                     
-                    if value > maxRed {
-                        maxRed = value
-                    }
+                    maxRed = max(maxRed, value)
                 } else if cube.hasSuffix("green") {
-                    let value = cube
-                        .trimmingCharacters(in: .whitespaces)
-                        .prefix(while: \.isWholeNumber)
-                    
-                    guard let value = Int(value) else {
-                        return nil
-                    }
+                    let value = numberOfCubes(cube)
                     
                     if shouldApplyLimit, value > 13 {
                         return nil
                     }
                     
-                    if value > maxGreen {
-                        maxGreen = value
-                    }
+                    maxGreen = max(maxGreen, value)
                 }
             }
             
         }
         
-        guard let id = gameId
-            .firstIndex(where: \.isWholeNumber)
-            .flatMap ({ Int("\(gameId[$0...])") })
-        else {
-            return nil
-        }
-        
-        self.id = id
-        self.maxBlue = maxBlue
-        self.maxRed = maxRed
-        self.maxGreen = maxGreen
+        self.id = try! gameId.firstMatch(of: /^Game (\d+)/)!.1.int
+        self.power = maxBlue * maxRed * maxGreen
     }
 }

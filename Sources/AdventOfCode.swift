@@ -41,7 +41,9 @@ struct AdventOfCode: AsyncParsableCommand {
             .milliseconds,
             .microseconds
         ],
-        width: .condensedAbbreviated
+        width: .condensedAbbreviated,
+        maximumUnitCount: 3,
+        valueLength: 3
     )
     
     func run(part: () async throws -> Any, named: String, shouldLog: Bool) async -> Duration {
@@ -55,10 +57,12 @@ struct AdventOfCode: AsyncParsableCommand {
             }
         }
         
+        let named = named.leftPadded()
+        
         switch result {
         case .success(let success):
             if shouldLog {
-                print("\(named): \(success)")
+                print("Part \(named): \(success)")
             }
         case .failure(let failure):
             print("\(named): Failed with error: \(failure)")
@@ -75,37 +79,51 @@ struct AdventOfCode: AsyncParsableCommand {
         var partOneDurations: [Duration] = []
         var partTwoDurations: [Duration] = []
         
-        for index in 0...10 {
-            let timing1 = await run(part: challenge.part1, named: "Part 1", shouldLog: index == 0)
+        let runs = benchmark ? 10 : 1
+        
+        for index in 0...runs {
+            let partOneDuration = await run(
+                part: challenge.part1,
+                named: "1",
+                shouldLog: index == 0
+            )
+            partOneDurations.append(partOneDuration)
             
-            partOneDurations.append(timing1)
-            
-            let timing2 = await run(part: challenge.part2, named: "Part 2", shouldLog: index == 0)
-            
-            partTwoDurations.append(timing2)
+            let partTwoDuration = await run(
+                part: challenge.part2,
+                named: "2",
+                shouldLog: index == 0
+            )
+            partTwoDurations.append(partTwoDuration)
         }
         
-        if benchmark {
-            logBenchmark(durations: partOneDurations, for: 1)
-            logBenchmark(durations: partTwoDurations, for: 2)
-        }
+        logBenchmark(durations: partOneDurations, for: 1)
+        logBenchmark(durations: partTwoDurations, for: 2)
     }
     
     func logBenchmark(durations: [Duration], for part: Int) {
-        #if DEBUG
-        print("Looks like you're benchmarking debug code. Try swift run -c release")
-        #endif
-        
-        
-        guard let min = durations.min()?.formatted(style),
-              let max = durations.max()?.formatted(style)
+        guard let min = durations.min()?.formatted(style).padded(),
+              let max = durations.max()?.formatted(style).padded()
         else {
             fatalError("Cannot compute min/max.")
         }
         
         let sum = durations.reduce(into: Duration.zero) { $0 += $1 }
-        let average = (sum / durations.count).formatted(style)
+        let average = (sum / durations.count).formatted(style).padded()
+        let part = "\(part)".leftPadded()
         
-        print("Part \(part) results: min: \(min) | max: \(max) | average: \(average)")
+        print("Part \(part) results: | min: \(min) | max: \(max) | average: \(average)")
+    }
+}
+
+private extension String {
+    func leftPadded(toLength length: Int = 2, withPad pad: Character = "0") -> Self {
+        let length = max(0, length - count)
+        
+        return repeatElement(pad, count: length) + self
+    }
+    
+    func padded(toLength length: Int = 25, withPad pad: Character = " ") -> Self {
+        padding(toLength: length, withPad: "\(pad)", startingAt: 0)
     }
 }
