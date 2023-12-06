@@ -33,16 +33,16 @@ struct Day04: AdventDay {
                     return nil
                 }
                 
-                let id = try! line.firstMatch(of: /^Card\s+(\d+):/)!.1.int
+                let id = try! line.firstMatch(of: /^Card\s+(\d+):/)!.1.toInteger()
                 let numbers = line.drop(while: { $0 != ":" }).components(separatedBy: "|")
                 let winningNumbers = numbers
                     .first!
                     .components(separatedBy: .whitespaces)
-                    .compactMap { try? $0.int }
+                    .compactMap { try? $0.toInteger() }
                 
                 let collectedNumbers = numbers.last!
                     .components(separatedBy: .whitespaces)
-                    .compactMap { try? $0.int }
+                    .compactMap { try? $0.toInteger() }
                 
                 return Card(
                     id: id,

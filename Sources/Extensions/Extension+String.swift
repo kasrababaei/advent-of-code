@@ -1,28 +1,22 @@
 extension Character {
-    var int: Int {
-        get throws {
-            try "\(self)".int
-        }
+    func toInteger() throws -> Int {
+        try "\(self)".toInteger()
     }
 }
 
 extension Substring {
-    var int: Int {
-        get throws {
-            try "\(self)".int
-        }
+    func toInteger() throws -> Int {
+        try "\(self)".toInteger()
     }
 }
 
 extension String {
-    var int: Int {
-        get throws {
-            guard let value = Int(self) else {
-                throw CustomError()
-            }
-            
-            return value
+    func toInteger() throws -> Int {
+        guard let value = Int(self) else {
+            throw CustomError()
         }
+        
+        return value
     }
 }
 

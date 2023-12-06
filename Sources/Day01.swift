@@ -11,7 +11,7 @@ struct Day01: AdventDay {
             
             guard let firstNumber = line.first(where: \.isNumber),
                   let lastNumber = line.reversed().first(where: \.isNumber),
-                  let number = try? 10 * firstNumber.int + lastNumber.int
+                  let number = try? 10 * firstNumber.toInteger() + lastNumber.toInteger()
             else { fatalError() }
             
             numbers.append(number)
@@ -43,7 +43,7 @@ struct Day01: AdventDay {
         var number = 0
         
         for (index, char) in line.enumerated() {
-            if let value = try? char.int {
+            if let value = try? char.toInteger() {
                 number = value
                 break
             }

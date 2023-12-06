@@ -36,7 +36,7 @@ struct Day03: AdventDay {
                 }
                 
                 if !character.isNumber || column == columns - 1 {
-                    guard let value = try? numbers.reduce(into: "", { $0 = $0 + "\($1)" }).int else {
+                    guard let value = try? numbers.reduce(into: "", { $0 = $0 + "\($1)" }).toInteger() else {
                         continue
                     }
                     
@@ -139,7 +139,7 @@ extension Array where Element == [Character] {
         [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
             .lazy
             .compactMap { (rowOffset, columnOffset) in
-                try? self[safe: row + rowOffset]?[safe: column + columnOffset]?.int
+                try? self[safe: row + rowOffset]?[safe: column + columnOffset]?.toInteger()
             }
             .first
     }
@@ -151,23 +151,23 @@ extension Array where Element == [Character] {
             var start = 0
             
             var index = column
-            while (try? self[safe: row]?[safe: index]?.int) != nil {
+            while (try? self[safe: row]?[safe: index]?.toInteger()) != nil {
                 start = index
                 index -= 1
             }
             
             index = start
-            while let value = try? self[safe: row]?[safe: index]?.int {
+            while let value = try? self[safe: row]?[safe: index]?.toInteger() {
                 number = "\(number)\(value)"
                 index += 1
             }
             
-            return try! number.int
+            return try! number.toInteger()
         }
         // Look up
         let up = [(-1, -1), (-1, 0), (-1, 1)]
             .filter { (rowOffset, columnOffset) in
-                (try? self[safe: row + rowOffset]?[safe: column + columnOffset]?.int) != nil
+                (try? self[safe: row + rowOffset]?[safe: column + columnOffset]?.toInteger()) != nil
             }
             .map {
                 number(row - 1, column + $1)
@@ -177,7 +177,7 @@ extension Array where Element == [Character] {
         // Look sideways
         let sideways = [(0, -1), (0, 1)]
             .filter { (_, columnOffset) in
-                (try? self[safe: row]?[safe: column + columnOffset]?.int) != nil
+                (try? self[safe: row]?[safe: column + columnOffset]?.toInteger()) != nil
             }
             .map {
                 number(row, column + $1)
@@ -186,7 +186,7 @@ extension Array where Element == [Character] {
         // Look bottom
         let bottom = [(1, -1), (1, 0), (1, 1)]
             .filter { (rowOffset, columnOffset) in
-                (try? self[safe: row + rowOffset]?[safe: column + columnOffset]?.int) != nil
+                (try? self[safe: row + rowOffset]?[safe: column + columnOffset]?.toInteger()) != nil
             }
             .map {
                 number(row + 1, column + $1)
@@ -209,18 +209,18 @@ extension Array where Element == [Character] {
         var start = 0
         
         var index = column
-        while (try? self[row][safe: index]?.int) != nil {
+        while (try? self[row][safe: index]?.toInteger()) != nil {
             start = index
             index -= 1
         }
         
         index = start
-        while let value = try? self[row][safe: index]?.int {
+        while let value = try? self[row][safe: index]?.toInteger() {
             number = "\(number)\(value)"
             index += 1
         }
         
-        return try! number.int
+        return try! number.toInteger()
     }
 }
 
@@ -270,6 +270,6 @@ struct Point: Hashable, Comparable {
 struct Neighbour: Hashable {
     let value: String
     var isGear: Bool { value == "*" }
-    var int: Int? { try? value.int }
+    var int: Int? { try? value.toInteger() }
     let points: Point
 }

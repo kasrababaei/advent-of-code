@@ -42,7 +42,7 @@ struct Game {
             try! cube
                 .trimmingCharacters(in: .whitespaces)
                 .prefix(while: \.isNumber)
-                .int
+                .toInteger()
         }
         
         for bag in subsets.components(separatedBy: ";") {
@@ -76,7 +76,7 @@ struct Game {
             
         }
         
-        self.id = try! gameId.firstMatch(of: /^Game (\d+)/)!.1.int
+        self.id = try! gameId.firstMatch(of: /^Game (\d+)/)!.1.toInteger()
         self.power = maxBlue * maxRed * maxGreen
     }
 }
