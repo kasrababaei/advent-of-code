@@ -8,7 +8,8 @@ let allChallenges: [any AdventDay] = [
     Day03(),
     Day04(),
     Day05(),
-    Day06()
+    Day06(),
+    Day07(),
 ]
 
 @main
@@ -117,17 +118,5 @@ struct AdventOfCode: AsyncParsableCommand {
         let part = "\(part)".leftPadded()
         
         print("Part \(part) results: | min: \(min) | max: \(max) | average: \(average)")
-    }
-}
-
-private extension String {
-    func leftPadded(toLength length: Int = 2, withPad pad: Character = "0") -> Self {
-        let length = max(0, length - count)
-        
-        return repeatElement(pad, count: length) + self
-    }
-    
-    func padded(toLength length: Int = 25, withPad pad: Character = " ") -> Self {
-        padding(toLength: length, withPad: "\(pad)", startingAt: 0)
     }
 }
