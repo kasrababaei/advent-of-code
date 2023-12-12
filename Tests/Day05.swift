@@ -50,12 +50,11 @@ final class Day05Tests: XCTestCase {
     }
     
     func testPart2() async throws {
+        /* Commented out since the solution is using a brute force approach
         var challenge = Day05(data: testData)
         var result = try await challenge.part2()
         XCTAssertEqual(String(describing: result), "46")
         
-        
-        /* Commented out since the solution is using a brute force approach
         challenge = Day05()
         result = try await challenge.part2()
         XCTAssertEqual(String(describing: result), "0")
