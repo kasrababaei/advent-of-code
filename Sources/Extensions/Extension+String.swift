@@ -28,6 +28,16 @@ extension String {
     func padded(toLength length: Int = 25, withPad pad: Character = " ") -> Self {
         padding(toLength: length, withPad: "\(pad)", startingAt: 0)
     }
+    
+    func to2DArray() -> [[Character]] {
+        let lines = components(separatedBy: .newlines).filter { !$0.isEmpty }
+        
+        guard lines.count == lines.first?.count ?? 0 else {
+            fatalError("The number of rows and and columns must be equal.")
+        }
+        
+        return lines.map { line in line.map { $0 } }
+    }
 }
 
 struct CustomError: Error {}
