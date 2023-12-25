@@ -38,6 +38,11 @@ extension String {
         
         return lines.map { line in line.map { $0 } }
     }
+    
+    func charAt(_ index: Int) -> Character {
+        let startIndex = self.index(startIndex, offsetBy: index)
+        return self[startIndex]
+    }
 }
 
 struct CustomError: Error {}
