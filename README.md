@@ -14,3 +14,7 @@ Solutions:
 - [Day 07](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/Day07.swift)
 - [Day 08](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/Day08.swift)
 - [Day 09](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/Day09.swift)
+- Day 10
+- [Day 11](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/Day11.swift)
+- [Day 12](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/Day12.swift)
+- [Day 13](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/Day13.swift)
