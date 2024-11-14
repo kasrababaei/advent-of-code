@@ -1,12 +1,12 @@
 import Foundation
 
-private var shouldLog = false
-private var isWildCardEnabled = false
+nonisolated(unsafe) private var shouldLog = false
+nonisolated(unsafe) private var isWildCardEnabled = false
 
 struct Day07: AdventDay {
     var data: String
     
-    let regex = /(.*) (\d+)/
+  var regex: Regex<(Substring, Substring, Substring)> { /(.*) (\d+)/ }
     
     func part1() -> Any {
         let totalWinnings = data

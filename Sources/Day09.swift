@@ -1,7 +1,7 @@
 struct Day09: AdventDay {
     var data: String
     
-    let regex = /(-?\d+)/
+  var regex: Regex<(Substring, Substring)> { /(-?\d+)/ }
     var lines: [[Int]] {
         get {
             data

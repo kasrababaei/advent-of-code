@@ -1,7 +1,7 @@
-class Day12: AdventDay {
-    private static let regex = /\.?(\?*#*\?*#*)\.?/
+final class Day12: AdventDay {
+  private var regex: Regex<(Substring, Substring)> { /\.?(\?*#*\?*#*)\.?/ }
     
-    var data: String
+    let data: String
     
     required init(data: String) {
         self.data = data
@@ -34,7 +34,7 @@ class Day12: AdventDay {
             }
     }
     
-    private var cache = [Line: Int]()
+    nonisolated(unsafe) private var cache = [Line: Int]()
     
     private func arrangements(_ line: Line) -> Int {
         if let cached = cache[line] {

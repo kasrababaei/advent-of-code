@@ -1,7 +1,7 @@
 struct Day08: AdventDay {
     var data: String
     
-    let regex = /(\w*) = \((\w*), (\w*)/
+  var regex: Regex<(Substring, Substring, Substring, Substring)> { /(\w*) = \((\w*), (\w*)/ }
     
     func part1() -> Any {
         let lines = data.components(separatedBy: .newlines)

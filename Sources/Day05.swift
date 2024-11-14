@@ -7,7 +7,7 @@ struct Day05: AdventDay {
             .compactMap { try? "\($0.1)".toInteger() }
     }
     
-    let regex = /(\d+) (\d+) (\d+)/
+  var regex: Regex<(Substring, Substring, Substring, Substring)> { /(\d+) (\d+) (\d+)/ }
     
     func part1() async throws -> Any {
         let lines = data.components(separatedBy: .newlines)

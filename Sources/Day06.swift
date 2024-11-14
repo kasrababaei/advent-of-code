@@ -4,7 +4,7 @@ struct Day06: AdventDay {
     // Non-capturing group zero or more words followed by a a colon,
     // proceeds with zero or more spaces,
     // captures one or more digits
-    let regex = /(?:\w*:)?\s*(\d+)/
+  var regex: Regex<(Substring, Substring)> { /(?:\w*:)?\s*(\d+)/ }
     
     func part1() -> Any {
         let lines = data.components(separatedBy: .newlines)

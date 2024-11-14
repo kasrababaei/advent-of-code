@@ -2,7 +2,7 @@
 @_exported import Collections
 import Foundation
 
-protocol AdventDay {
+protocol AdventDay: Sendable {
     /// The day of the Advent of Code challenge.
     ///
     /// You can implement this property, or, if your type is named with the
@@ -60,7 +60,7 @@ extension AdventDay {
             subdirectory: "Data")
         
         guard let dataURL,
-              let data = try? String(contentsOf: dataURL)
+              let data = try? String(contentsOf: dataURL, encoding: .utf8)
         else {
             fatalError("Couldn't find file '\(dataFilename).txt' in the 'Data' directory.")
         }
