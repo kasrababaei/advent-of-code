@@ -78,7 +78,7 @@
       <CommandLineArguments>
          <CommandLineArgument
             argument = "--benchmark"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>
    </LaunchAction>
