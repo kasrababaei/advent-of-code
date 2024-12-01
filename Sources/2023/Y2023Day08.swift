@@ -1,4 +1,4 @@
-struct Day08: AdventDay {
+struct Y2023Day08: AdventDay {
     var data: String
     
   var regex: Regex<(Substring, Substring, Substring, Substring)> { /(\w*) = \((\w*), (\w*)/ }

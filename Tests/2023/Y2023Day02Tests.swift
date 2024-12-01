@@ -1,7 +1,7 @@
 import XCTest
 @testable import AdventOfCode
 
-final class Day02Tests: XCTestCase {
+final class Y2023Day02Tests: XCTestCase {
     let partOneTestData = """
     Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
     Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue
@@ -12,18 +12,18 @@ final class Day02Tests: XCTestCase {
     """
     
     func testPart1() throws {
-        var challenge = Day02(data: partOneTestData)
+        var challenge = Y2023Day02(data: partOneTestData)
         XCTAssertEqual(String(describing: challenge.part1()), "8")
         
-        challenge = Day02()
+        challenge = Y2023Day02()
         XCTAssertEqual(String(describing: challenge.part1()), "2278")
     }
     
     func testPart2() throws {
-        var challenge = Day02(data: partOneTestData)
+        var challenge = Y2023Day02(data: partOneTestData)
         XCTAssertEqual(String(describing: challenge.part2()), "2286")
         
-        challenge = Day02()
+        challenge = Y2023Day02()
         XCTAssertEqual(String(describing: challenge.part2()), "67953")
     }
 }

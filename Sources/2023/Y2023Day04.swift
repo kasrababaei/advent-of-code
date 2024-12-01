@@ -1,6 +1,6 @@
 import Foundation
 
-struct Day04: AdventDay {
+struct Y2023Day04: AdventDay {
     let shouldLog = false
     
     var data: String

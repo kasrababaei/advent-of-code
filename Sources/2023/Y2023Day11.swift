@@ -1,4 +1,4 @@
-struct Day11: AdventDay {
+struct Y2023Day11: AdventDay {
     var data: String
     
     func part1() -> Any {

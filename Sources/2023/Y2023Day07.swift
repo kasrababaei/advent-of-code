@@ -3,7 +3,7 @@ import Foundation
 nonisolated(unsafe) private var shouldLog = false
 nonisolated(unsafe) private var isWildCardEnabled = false
 
-struct Day07: AdventDay {
+struct Y2023Day07: AdventDay {
     var data: String
     
   var regex: Regex<(Substring, Substring, Substring)> { /(.*) (\d+)/ }

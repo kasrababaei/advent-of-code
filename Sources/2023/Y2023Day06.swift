@@ -1,4 +1,4 @@
-struct Day06: AdventDay {
+struct Y2023Day06: AdventDay {
     var data: String
     
     // Non-capturing group zero or more words followed by a a colon,

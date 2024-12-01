@@ -3,19 +3,28 @@ import Foundation
 
 // Add each new day implementation to this array:
 let allChallenges: [any AdventDay] = [
-    Day00(),
-    Day01(),
-    Day02(),
-    Day03(),
-    Day04(),
-    Day05(),
-    Day06(),
-    Day07(),
-    Day08(),
-    Day09(),
-    Day11(),
-    Day12(),
-    Day13(),
+    year2023,
+    year2024
+].flatMap(\.self)
+
+let year2023: [any AdventDay] = [
+  Y2023Day00(),
+  Y2023Day01(),
+  Y2023Day02(),
+  Y2023Day03(),
+  Y2023Day04(),
+  Y2023Day05(),
+  Y2023Day06(),
+  Y2023Day07(),
+  Y2023Day08(),
+  Y2023Day09(),
+  Y2023Day11(),
+  Y2023Day12(),
+  Y2023Day13()
+]
+
+let  year2024: [any AdventDay] = [
+  
 ]
 
 @main

@@ -1,4 +1,4 @@
-final class Day12: AdventDay {
+final class Y2023Day12: AdventDay {
   private var regex: Regex<(Substring, Substring)> { /\.?(\?*#*\?*#*)\.?/ }
     
     let data: String

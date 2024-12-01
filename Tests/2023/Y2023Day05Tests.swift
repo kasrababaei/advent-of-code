@@ -1,7 +1,7 @@
 import XCTest
 @testable import AdventOfCode
 
-final class Day05Tests: XCTestCase {
+final class Y2023Day05Tests: XCTestCase {
     let testData = """
     seeds: 79 14 55 13
 
@@ -40,11 +40,11 @@ final class Day05Tests: XCTestCase {
     """
     
     func testPart1() async throws {
-        var challenge = Day05(data: testData)
+        var challenge = Y2023Day05(data: testData)
         var result = try await challenge.part1()
         XCTAssertEqual(String(describing: result), "35")
         
-        challenge = Day05()
+        challenge = Y2023Day05()
         result = try await challenge.part1()
         XCTAssertEqual(String(describing: result), "836040384")
     }

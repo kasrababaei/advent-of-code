@@ -1,4 +1,4 @@
-struct Day05: AdventDay {
+struct Y2023Day05: AdventDay {
     var data: String
     
     var seeds: [Int] {

@@ -1,6 +1,6 @@
 import Foundation
 
-struct Day02: AdventDay {
+struct Y2023Day02: AdventDay {
     var data: String
     
     func part1() -> Any {
