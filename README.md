@@ -22,3 +22,6 @@ Solutions:
 - [Day 12](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2023/Y2023Day12.swift)
 - [Day 13](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2023/Y2023Day13.swift)
 
+## Year 2024
+
+- [Day 01](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day01.swift)
