@@ -25,3 +25,24 @@ extension Array where Self.Iterator.Element: RandomAccessCollection {
         }
     }
 }
+
+extension Array {
+  /// Returns the same index if it's within bounds.
+  ///
+  /// When the index is negative, returns zero but when it's greater than the last index, returns
+  /// the last index.
+  func clamped(_ index: Int) -> Int {
+    if indices.contains(index) {
+      return index
+    } else {
+      return index < 0 ? 0 : count - 1
+    }
+  }
+  
+  /// Returns a new copy of `self` without the element at the given index.
+  func removing(at index: Int) -> [Element] {
+    var array = self
+    array.remove(at: index)
+    return array
+  }
+}

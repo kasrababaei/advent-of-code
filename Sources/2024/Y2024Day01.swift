@@ -31,7 +31,7 @@ struct Y2024Day01: AdventDay {
       result.1.append(Int(match.2)!)
     }
     
-    guard left.count == right.count else { fatalError("The length should be equal") }
+    guard left.count == right.count else { fatalError("Unequal lengths.") }
     
     return (left.sorted(by: >), right.sorted(by: >))
   }
