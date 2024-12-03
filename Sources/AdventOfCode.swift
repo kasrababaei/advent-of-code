@@ -2,6 +2,7 @@ import ArgumentParser
 import Foundation
 
 let years: [[any AdventDay]] = [
+  year1970,
   year2023,
   year2024
 ]
@@ -9,8 +10,9 @@ let years: [[any AdventDay]] = [
 // Add each new day implementation to this array:
 let allChallenges: [any AdventDay] = years.flatMap(\.self)
 
+let year1970: [any AdventDay] = [Y1970Day01()]
+
 let year2023: [any AdventDay] = [
-  Y2023Day00(),
   Y2023Day01(),
   Y2023Day02(),
   Y2023Day03(),
@@ -29,6 +31,13 @@ let  year2024: [any AdventDay] = [
   Y2024Day01(),
   Y2024Day02(),
   Y2024Day03(),
+  Y2024Day04(),
+  Y2024Day05(),
+  Y2024Day06(),
+  Y2024Day07(),
+  Y2024Day08(),
+  Y2024Day09(),
+  Y2024Day10(),
 ]
 
 @main
