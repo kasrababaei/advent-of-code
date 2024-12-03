@@ -26,3 +26,4 @@ Solutions:
 
 - [Day 01](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day01.swift)
 - [Day 02](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day02.swift)
+- [Day 03](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day03.swift)
