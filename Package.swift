@@ -8,7 +8,7 @@ let dependencies: [Target.Dependency] = [
 ]
 
 let package = Package(
-    name: "AdventOfCode",
+    name: "advent-of-code",
     platforms: [.macOS(.v15)],
     dependencies: [
         .package(
@@ -26,13 +26,13 @@ let package = Package(
     ],
     targets: [
         .executableTarget(
-            name: "AdventOfCode",
+            name: "advent-of-code",
             dependencies: dependencies,
             resources: [.copy("Data")],
             swiftSettings: [.unsafeFlags(["-enable-bare-slash-regex"])]),
         .testTarget(
-            name: "AdventOfCodeTests",
-            dependencies: ["AdventOfCode"] + dependencies
+            name: "advent-of-code-tests",
+            dependencies: ["advent-of-code"] + dependencies
         )
     ]
 )

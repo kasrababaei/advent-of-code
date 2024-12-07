@@ -42,6 +42,13 @@ let  year2024: [any AdventDay] = [
 
 @main
 struct AdventOfCode: AsyncParsableCommand {
+  public static var configuration: CommandConfiguration {
+    CommandConfiguration(
+      commandName: "advent-of-code",
+      abstract: "Runs Advent of Code challenges"
+    )
+  }
+  
   @Argument(help: "The year of the challenge. For 2020, use '2020'.")
   var year: Int?
   
