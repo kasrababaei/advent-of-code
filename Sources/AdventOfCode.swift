@@ -72,6 +72,7 @@ struct AdventOfCode: AsyncParsableCommand {
           throw ValidationError("No solution found for day \(day)")
         }
       } else {
+        print("Running last challenge...")
         return latestChallenge
       }
     }
@@ -121,7 +122,7 @@ struct AdventOfCode: AsyncParsableCommand {
   func run() async throws {
     let challenge = try selectedChallenge
     
-    print("Executing Advent of Code challenge \(challenge.day)...")
+    print("Executing Advent of Code challenge year \(challenge.year) day \(challenge.day)...")
     
     var partOneDurations: [Duration] = []
     var partTwoDurations: [Duration] = []

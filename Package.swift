@@ -26,13 +26,13 @@ let package = Package(
     ],
     targets: [
         .executableTarget(
-            name: "advent-of-code",
+            name: "AdventOfCode",
             dependencies: dependencies,
             resources: [.copy("Data")],
             swiftSettings: [.unsafeFlags(["-enable-bare-slash-regex"])]),
         .testTarget(
-            name: "advent-of-code-tests",
-            dependencies: ["advent-of-code"] + dependencies
+            name: "AdventOfCode-Tests",
+            dependencies: ["AdventOfCode"] + dependencies
         )
     ]
 )
