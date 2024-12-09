@@ -3,20 +3,33 @@ import Testing
 
 struct Y2024Day08Tests {
   let testData = """
+  ............
+  ........0...
+  .....0......
+  .......0....
+  ....0.......
+  ......A.....
+  ............
+  ............
+  ........A...
+  .........A..
+  ............
+  ............
   """
     
   @Test func testPart1() async throws {
-    let testData = """
-    """
-    #expect(try Y2024Day08(data: testData).part1() as! Int == 0)
-    #expect(try Y2024Day08().part1() as! Int == 0)
+    let testResult = try Y2024Day08(data: testData).part1() as! Int
+    #expect(testResult == 14)
+    
+    let inputResult = try Y2024Day08().part1() as! Int
+    #expect(inputResult == 371)
   }
   
   @Test func testPart2() async throws {
-    let testData = """
-    """
-    #expect(try Y2024Day08(data: testData).part2() as! Int == 0)
-    #expect(try Y2024Day08().part2() as! Int == 0)
+    let testResult = try Y2024Day08(data: testData).part2() as! Int
+    #expect(testResult == 34)
+    
+    let inputResult = try Y2024Day08().part2() as! Int
+    #expect(inputResult == 1229)
   }
 }
-
