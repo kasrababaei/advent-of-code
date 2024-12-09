@@ -3,20 +3,17 @@ import Testing
 
 struct Y2024Day09Tests {
   let testData = """
+  2333133121414131402
   """
     
   @Test func testPart1() async throws {
-    let testData = """
-    """
-    #expect(try Y2024Day09(data: testData).part1() as! Int == 0)
-    #expect(try Y2024Day09().part1() as! Int == 0)
+    let inputResult = try Y2024Day09().part1() as! Int
+    #expect(inputResult == 6291146824486)
   }
   
   @Test func testPart2() async throws {
-    let testData = """
-    """
-    #expect(try Y2024Day09(data: testData).part2() as! Int == 0)
-    #expect(try Y2024Day09().part2() as! Int == 0)
+    let inputResult = try Y2024Day09().part2() as! Int
+    #expect(inputResult == 6307279963620)
   }
 }
 
