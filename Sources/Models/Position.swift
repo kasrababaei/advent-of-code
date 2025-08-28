@@ -28,3 +28,12 @@ extension Position {
     return self + delta
   }
 }
+
+extension Position: Comparable {
+  static func < (lhs: Position, rhs: Position) -> Bool {
+    if lhs.y != rhs.y {
+      return lhs.y < rhs.y
+    }
+    return lhs.x < rhs.x
+  }
+}
