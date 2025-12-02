@@ -4,7 +4,8 @@ import Foundation
 let years: [[any AdventDay]] = [
   year1970,
   year2023,
-  year2024
+  year2024,
+  year2025
 ]
 
 // Add each new day implementation to this array:
@@ -27,7 +28,7 @@ let year2023: [any AdventDay] = [
   Y2023Day13()
 ]
 
-let  year2024: [any AdventDay] = [
+let year2024: [any AdventDay] = [
   Y2024Day01(),
   Y2024Day02(),
   Y2024Day03(),
@@ -38,6 +39,10 @@ let  year2024: [any AdventDay] = [
   Y2024Day08(),
   Y2024Day09(),
   Y2024Day10(),
+]
+
+let year2025: [any AdventDay] = [
+    Y2025Day01()
 ]
 
 @main
