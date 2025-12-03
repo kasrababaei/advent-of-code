@@ -6,6 +6,24 @@ I'm using the template provided by Apple that can be found [here](https://github
 
 Solutions:
 
+## Year 2025
+
+- [Day 01](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2025/Y2025Day01.swift)
+- [Day 02](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2025/Y2025Day02.swift)
+
+## Year 2024
+
+- [Day 01](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day01.swift)
+- [Day 02](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day02.swift)
+- [Day 03](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day03.swift)
+- [Day 04](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day04.swift)
+- [Day 05](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day05.swift)
+- [Day 06](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day06.swift)
+- [Day 07](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day07.swift)
+- [Day 08](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day08.swift)
+- [Day 09](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day09.swift)
+- [Day 10](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day10.swift)
+
 ## Year 2023
 
 - [Day 01](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2023/Y2023Day01.swift)
@@ -21,16 +39,3 @@ Solutions:
 - [Day 11](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2023/Y2023Day11.swift)
 - [Day 12](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2023/Y2023Day12.swift)
 - [Day 13](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2023/Y2023Day13.swift)
-
-## Year 2024
-
-- [Day 01](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day01.swift)
-- [Day 02](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day02.swift)
-- [Day 03](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day03.swift)
-- [Day 04](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day04.swift)
-- [Day 05](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day05.swift)
-- [Day 06](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day06.swift)
-- [Day 07](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day07.swift)
-- [Day 08](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day08.swift)
-- [Day 09](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day09.swift)
-- [Day 10](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2024/Y2024Day10.swift)
