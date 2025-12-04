@@ -43,7 +43,8 @@ let year2024: [any AdventDay] = [
 
 let year2025: [any AdventDay] = [
     Y2025Day01(),
-    Y2025Day02()
+    Y2025Day02(),
+    Y2025Day03()
 ]
 
 @main
