@@ -10,6 +10,9 @@ Solutions:
 
 - [Day 01](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2025/Y2025Day01.swift)
 - [Day 02](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2025/Y2025Day02.swift)
+- [Day 03](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2025/Y2025Day03.swift)
+- [Day 04](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2025/Y2025Day04.swift)
+- [Day 05](https://github.com/kasrababaei/advent-of-code/blob/main/Sources/2025/Y2025Day05.swift)
 
 ## Year 2024
 
